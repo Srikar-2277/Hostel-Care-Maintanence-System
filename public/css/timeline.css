@@ -1,0 +1,236 @@
+/* ==========================================================================
+   HostelCare – Visual Complaint Lifecycle Timeline
+   ========================================================================== */
+
+/* Horizontal Stepper Summary */
+.lifecycle-stepper-wrap {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  margin-bottom: 1.75rem;
+  box-shadow: var(--shadow-sm);
+  overflow-x: auto;
+}
+
+.lifecycle-stepper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 650px;
+  position: relative;
+}
+
+.stepper-progress-line {
+  position: absolute;
+  top: 18px;
+  left: 30px;
+  right: 30px;
+  height: 4px;
+  background-color: var(--border-color);
+  z-index: 1;
+}
+
+.stepper-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #3b82f6, #10b981);
+  transition: width 0.4s ease;
+}
+
+.stepper-step {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 90px;
+}
+
+.step-node {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: var(--bg-surface);
+  border: 2px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--text-light);
+  transition: all 0.25s ease;
+  margin-bottom: 0.5rem;
+}
+
+.stepper-step.completed .step-node {
+  background-color: var(--color-success);
+  border-color: var(--color-success);
+  color: #ffffff;
+}
+
+.stepper-step.active .step-node {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #ffffff;
+  box-shadow: 0 0 0 4px var(--color-primary-light);
+}
+
+.stepper-step.rejected .step-node {
+  background-color: var(--color-danger);
+  border-color: var(--color-danger);
+  color: #ffffff;
+}
+
+.stepper-step.reopened .step-node {
+  background-color: var(--color-purple);
+  border-color: var(--color-purple);
+  color: #ffffff;
+  box-shadow: 0 0 0 4px var(--color-purple-bg);
+}
+
+.step-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  line-height: 1.2;
+}
+
+.stepper-step.active .step-label {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+/* Detailed Vertical Audit Timeline */
+.timeline-vertical {
+  position: relative;
+  padding-left: 2.25rem;
+  margin-top: 1rem;
+}
+
+.timeline-vertical::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 14px;
+  width: 2px;
+  background-color: var(--border-color);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -2.25rem;
+  top: 3px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: var(--bg-surface);
+  border: 2px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  z-index: 2;
+  box-shadow: 0 0 0 3px var(--bg-surface);
+}
+
+.timeline-item.status-submitted .timeline-dot { border-color: #64748b; color: #64748b; }
+.timeline-item.status-approved .timeline-dot { border-color: #3b82f6; color: #3b82f6; background-color: var(--color-primary-light); }
+.timeline-item.status-assigned .timeline-dot { border-color: #0284c7; color: #0284c7; }
+.timeline-item.status-in-progress .timeline-dot { border-color: #f59e0b; color: #f59e0b; background-color: var(--color-warning-bg); }
+.timeline-item.status-work-completed .timeline-dot { border-color: #10b981; color: #10b981; }
+.timeline-item.status-awaiting-confirmation .timeline-dot { border-color: #f97316; color: #f97316; background-color: #ffedd5; }
+.timeline-item.status-resolved .timeline-dot { border-color: #16a34a; color: #ffffff; background-color: #16a34a; }
+.timeline-item.status-rejected .timeline-dot { border-color: #dc2626; color: #ffffff; background-color: #dc2626; }
+.timeline-item.status-reopened .timeline-dot { border-color: #9333ea; color: #ffffff; background-color: #9333ea; }
+
+.timeline-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  box-shadow: var(--shadow-xs);
+}
+
+.timeline-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.35rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.timeline-title {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.timeline-time {
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
+.timeline-meta {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.timeline-note {
+  font-size: 0.875rem;
+  color: var(--text-main);
+  line-height: 1.45;
+  background-color: var(--bg-subtle);
+  padding: 0.625rem 0.875rem;
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--color-primary);
+}
+
+/* Deadline & Overdue Countdown Box */
+.deadline-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-md);
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.deadline-banner.normal {
+  background-color: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: #1e40af;
+}
+
+.deadline-banner.overdue {
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #991b1b;
+  animation: pulse-border 2s infinite;
+}
+
+.deadline-countdown-num {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+}

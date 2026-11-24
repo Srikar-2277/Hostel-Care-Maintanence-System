@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="HostelCare – Smart Hostel Maintenance & Complaint Management System with real-time lifecycle tracking, role-based dashboards, and analytics." />
+  <meta name="theme-color" content="#1e293b" />
+  <title>HostelCare – Smart Hostel Maintenance & Complaint Management System</title>
+  
+  <!-- Favicon SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z'></path><polyline points='9 22 9 12 15 12 15 22'></polyline></svg>" />
+
+  <!-- Google Fonts: Inter & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/timeline.css" />
+  <link rel="stylesheet" href="/css/responsive.css" />
+</head>
+<body class="theme-light">
+  <!-- Top App Progress Bar (for async route/fetch transitions) -->
+  <div id="route-progress" class="route-progress-bar"></div>
+
+  <!-- Global Application Shell -->
+  <div id="app" class="app-layout">
+    <!-- Dynamic Top Navbar -->
+    <header id="main-header" class="main-header"></header>
+
+    <!-- Content Wrapper with Sidebar and Main View -->
+    <div class="app-body">
+      <!-- Collapsible Sidebar -->
+      <aside id="main-sidebar" class="main-sidebar"></aside>
+
+      <!-- Sidebar Backdrop on Mobile -->
+      <div id="sidebar-backdrop" class="sidebar-backdrop" onclick="App.toggleSidebar(false)"></div>
+
+      <!-- Main Router Container -->
+      <main id="app-container" class="main-content" role="main" aria-live="polite">
+        <!-- Views are dynamically rendered here -->
+      </main>
+    </div>
+  </div>
+
+  <!-- Global Toast Notification Container -->
+  <div id="toast-container" class="toast-container" aria-live="assertive"></div>
+
+  <!-- Global Modal Container -->
+  <div id="modal-container" class="modal-container" role="dialog" aria-modal="true"></div>
+
+  <!-- Image Preview Lightbox Modal -->
+  <div id="image-lightbox" class="image-lightbox" onclick="Components.closeLightbox()">
+    <button class="lightbox-close-btn" aria-label="Close image preview">&times;</button>
+    <img id="lightbox-img" src="" alt="Enlarged view" />
+  </div>
+
+  <!-- Core JavaScript Modules -->
+  <script src="/js/config.js"></script>
+  <script src="/js/store.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/components.js"></script>
+  <script src="/js/router.js"></script>
+
+  <!-- View Controllers -->
+  <script src="/js/views/landing.js"></script>
+  <script src="/js/views/login.js"></script>
+  <script src="/js/views/register.js"></script>
+  <script src="/js/views/studentDashboard.js"></script>
+  <script src="/js/views/submitComplaint.js"></script>
+  <script src="/js/views/complaintDetails.js"></script>
+  <script src="/js/views/studentHistory.js"></script>
+  <script src="/js/views/wardenDashboard.js"></script>
+  <script src="/js/views/complaintManagement.js"></script>
+  <script src="/js/views/staffManagement.js"></script>
+  <script src="/js/views/staffDashboard.js"></script>
+  <script src="/js/views/assignedTaskDetails.js"></script>
+  <script src="/js/views/notifications.js"></script>
+  <script src="/js/views/profile.js"></script>
+  <script src="/js/views/analytics.js"></script>
+
+  <!-- Main App Entry -->
+  <script src="/js/app.js"></script>
+</body>
+</html>
