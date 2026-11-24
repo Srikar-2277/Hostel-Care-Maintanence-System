@@ -194,6 +194,9 @@ The server will boot up at:
 
 ## 🔒 Security & Data Integrity
 
+##Live Hosting Link : https://hostel-care-maintanence-system.onrender.com/
+
+
 - Passwords hashed with salt rounds via `bcryptjs`.
 - JWT tokens with configurable expiration.
 - Strict role authorization guards (`student`, `warden`, `staff`) on both backend routes and frontend SPA navigation.
